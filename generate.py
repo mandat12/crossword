@@ -206,7 +206,9 @@ class CrosswordCreator():
         """
         n = None
         for x in self.crossword.variables - set(assignment):
-            if (n is None or len(self.domains[x]) < len(self.domains[n]) or len((self.crossword.neighbors(x)) > len(self.crossword.neighbors(n)))):
+            if (n is None or len(self.domains[x]) < len(self.domains[n]) or
+                    len(self.crossword.neighbors(x)) > len(self.crossword.neighbors(n))
+            ):
                 n = x
         return n
 
